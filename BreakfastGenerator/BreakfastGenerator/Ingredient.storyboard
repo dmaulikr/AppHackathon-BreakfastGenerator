@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LGx-fR-Xpr">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ingredient Pick View Controller-->
+        <scene sceneID="XGR-GO-v4S">
+            <objects>
+                <viewController id="axM-7e-Qte" customClass="IngredientPickViewController" customModule="BreakfastGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZmG-Tj-u7y"/>
+                        <viewControllerLayoutGuide type="bottom" id="pe6-P2-uMT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xtm-8w-VC4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Ingredient: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIT-my-iRT">
+                                <rect key="frame" x="16" y="150" width="120" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ko6-8J-5CW">
+                                <rect key="frame" x="144" y="149" width="207" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pY-NR-XXV" userLabel="Add to Ingredients List Button">
+                                <rect key="frame" x="101" y="325" width="173" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.210161601" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add to Ingredients List"/>
+                                <connections>
+                                    <action selector="addIngredientTapped:" destination="axM-7e-Qte" eventType="touchUpInside" id="vnP-X3-wtK"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SeQ-DM-TN4" userLabel="Ingredient Picker View">
+                                <rect key="frame" x="48" y="201" width="278" height="105"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90423971410000004" green="0.95637124780000005" blue="0.99807935950000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="axM-7e-Qte" id="nvX-MY-e9x"/>
+                                    <outlet property="delegate" destination="axM-7e-Qte" id="nNd-S1-iAt"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90423971410000004" green="0.95637124780000005" blue="0.99807935950000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addIngredientButton" destination="7pY-NR-XXV" id="YuN-cO-XLp"/>
+                        <outlet property="addIngredientTextField" destination="Ko6-8J-5CW" id="NEA-F7-Ncs"/>
+                        <outlet property="ingredientOptionPickView" destination="SeQ-DM-TN4" id="Vyx-L6-k2S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kUp-fl-zMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2900" y="551.87406296851577"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lgg-3D-hGo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LGx-fR-Xpr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4zq-dw-aKy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Odm-YL-u3N" kind="relationship" relationship="rootViewController" id="xAu-86-6OD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S1O-Fe-9a9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="551.87406296851577"/>
+        </scene>
+        <!--Ingredient View Controller-->
+        <scene sceneID="a9b-63-gpX">
+            <objects>
+                <tableViewController id="Odm-YL-u3N" customClass="IngredientViewController" customModule="BreakfastGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="R9X-sb-tET">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ingredientCell" id="Sbq-FR-DRh">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sbq-FR-DRh" id="ER8-jS-2dn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Odm-YL-u3N" id="AtN-mz-K3n"/>
+                            <outlet property="delegate" destination="Odm-YL-u3N" id="cs9-l3-rTG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="4ta-NW-WuS">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="cwS-UU-561">
+                            <connections>
+                                <segue destination="axM-7e-Qte" kind="show" identifier="AddIngredient" id="OJp-9e-FeT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zrs-Pu-Yet" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2017" y="552"/>
+        </scene>
+    </scenes>
+</document>
